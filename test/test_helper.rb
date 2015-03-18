@@ -2,8 +2,8 @@ require 'rubygems'
 require 'hpricot'
 require 'riot'
 
-$:.unshift File.dirname(__FILE__)
-$:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+$LOAD_PATH.unshift File.dirname(__FILE__)
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
 require 'toto'
 
@@ -15,9 +15,9 @@ module Toto
       doc = Hpricot.parse(actual)
       expected = expected.to_a.flatten
 
-      if (doc/expected.first).empty?
+      if (doc / expected.first).empty?
         fail("expected #{actual} to contain a <#{expected.first}>")
-      elsif !(doc/expected.first).inner_html.match(expected.last)
+      elsif !(doc / expected.first).inner_html.match(expected.last)
         fail("expected <#{expected.first}> to contain #{expected.last}")
       else
         pass
@@ -30,7 +30,7 @@ module Toto
 
     def evaluate(actual, selector, count)
       doc = Hpricot.parse(actual)
-      (doc/selector).size == count ? pass : fail("expected #{actual} to contain #{count} #{selector}(s)")
+      (doc / selector).size == count ? pass : fail("expected #{actual} to contain #{count} #{selector}(s)")
     end
   end
 

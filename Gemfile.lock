@@ -1,0 +1,28 @@
+PATH
+  remote: .
+  specs:
+    toto (0.4.9)
+      builder (= 3.2.2)
+      rack (= 1.5.2)
+      redcarpet (= 3.2.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    builder (3.2.2)
+    hpricot (0.8.6)
+    rack (1.5.2)
+    rake (10.4.2)
+    redcarpet (3.2.2)
+    riot (0.12.5)
+      rr
+    rr (1.1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  hpricot (= 0.8.6)
+  rake (= 10.4.2)
+  riot (= 0.12.5)
+  toto!
